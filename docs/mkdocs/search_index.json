@@ -1,0 +1,89 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Introduction\n\n\nArtificial neural networks (ANN) are computing architectures with massively parallel interconnections of simple neurons. It has been applied to biomedical fields such as imaging analysis and diagnosis.  \n\n\nIn this package built on the Theano math library, we implement ANNs to predict patient prognosis by extending Cox Regression to the non-linear neural network framework.  \n\n\nSome features of Cox-nnet include parallelization and GPU usage for high computational efficiency, training optimization methods such as the Nesterov accelerated gradient and flexibility in allowing the specification of neural network architecture.  Incorporation of biological information into the structure or using a deep learning approach are possible.  \n\n\nIn all, we think that this new tool will tremendously help researchers to build stronger predictive models as well as investigate the importance of variables associated with patient outcome.  \n\n\nFunctions overview\n\n\n\n\ntrainCoxMlp\n - main function for training a Cox-nnet model\n\n\nCVLoglikelihood\n - calculate the cross-validated logliklihood (model performance metric)\n\n\nCIndex\n - calculate the C-Index (model performance metric)\n\n\nL2CVSearch\n - helper function for optimizing the regularization parameter; searches for lambda using a hill climbing algorithm\n\n\nL2CVProfile\n - helper function for optimizing the regularization parameter; profiles lambda across a range of values\n\n\nevalNewData\n - evaluates new data or test data; outputs the linear predictor (i.e., the log hazard ratio)\n\n\nvarImportance\n - determine variable importance through a dropout procedure\n\n\nsaveModel\n - saves model to binary file\n\n\nloadModel\n - loads model from file", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/trainCoxMlp/", 
+            "text": "", 
+            "title": "trainCoxMlp"
+        }, 
+        {
+            "location": "/CVLoglikelihood/", 
+            "text": "", 
+            "title": "CVLoglikelihood"
+        }, 
+        {
+            "location": "/CIndex/", 
+            "text": "", 
+            "title": "CIndex"
+        }, 
+        {
+            "location": "/L2CVSearch/", 
+            "text": "", 
+            "title": "L2CVSearch"
+        }, 
+        {
+            "location": "/L2CVProfile/", 
+            "text": "", 
+            "title": "L2CVProfile"
+        }, 
+        {
+            "location": "/evalNewData/", 
+            "text": "", 
+            "title": "evalNewData"
+        }, 
+        {
+            "location": "/varImportance/", 
+            "text": "", 
+            "title": "varImportance"
+        }, 
+        {
+            "location": "/saveModel/", 
+            "text": "", 
+            "title": "saveModel"
+        }, 
+        {
+            "location": "/loadModel/", 
+            "text": "", 
+            "title": "loadModel"
+        }, 
+        {
+            "location": "/example/", 
+            "text": "", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/about/", 
+            "text": "Freta limus dum\n\n\nVel insequitur et invisi manat\n\n\nLorem markdownum contraxit mare Ditem vulneribus falsa: \nianua cum nuper\n? Hoc\n\neheu timendi\n deperderet fudit captiva, legebat exsultat ipsaque. Noviens\nmensas?\n\n\n\n\nAt auditum iubet quae tum saepe volenti\n\n\nEt Invidiae frustra doctos inmittor\n\n\nNatas Psecas petit noviens\n\n\n\n\nInque sive a truncus evinctus\n\n\nHecateia tanto utque\n fretumque figura standi Phoebus, pabula fauni inquit\nexstitit Arcade succedere morte aquis idem credite querellas illius? Obfuit\nredimicula ipse diversorum latratibus colli, e in non poenaque. Protinus altera.\nMens erat nec obstantes: contra o nostra omine. Accipis nymphae incerto vocat,\nnavigat tetigere pleno, difficilis tendebant \nextremum guttur\n.\n\n\nQuem rarissima oculos divino suspiria, potens tamen, dum miserum gurgitis\nsuperbos sedemque nate: esse. Ite toto quoque questuque attulit: et ignota\nneque. Feci \ndixerat viscata omnibus\n fuisset\nsegnibus corpusque talia. Auxilium toto, Pirenidas esse Teleboasque Denique\nvictor non audiri aequora pectora miratur glaebam volandi aurea falsa terris\nhaec. Pronam factaque viventia donec nec illic Delo transit unum nec secutum\nnutanti esse \ntenus\n anno patris.\n\n\nPopulari circumspicit cupit dixit gemino servat\n\n\nVincere movet. Volat quoque sumus, sinus nate tota proles: modo occupat.\n\n\n\n\nVidisset qua fera adulterium facioque\n\n\nFerarum iustae Cassiope suo maior creditis mentitus\n\n\nVisae vultum gratamque fortuna deseruere aures\n\n\nEram dieque sibi munere micant\n\n\nAdparet ingemuit vulgusque tibi Delphis collegit caput\n\n\n\n\nLocuta lanas pondere rediere senis retia descendit\n\n\nNullos avidaeque Cynthus institerant mihi Oceano quod praemia, ut auras tu\npariter iniuria medio tumulo! Totum nec nitidi patitur suae grata auro Palladias\nobstante ista, suos mater! Militia erit, lactantes ingemuit femina abluit,\ndecursus, ipsa. Magni convertit.\n\n\nFamulasque signo quos huc sententia libido Procrusten ingenti locuta: ipse\nossaque spectant imaginis \nPeleusque constant quaque\n\nimagine. Sine conde faciebat exhortanturque carpunt fuga auctor iunctarum\nmovetur postera, prior parentis, pendere. Momentaque viribus omnes,\n\nnomen\n vos. Rosave et fuerat\nhanc, sua Quirites illam communemque licet pectora dicens. Oscula quae coeptus\nsic abit repetisse sepulcrum Cynthus derant.", 
+            "title": "About"
+        }, 
+        {
+            "location": "/about/#freta-limus-dum", 
+            "text": "", 
+            "title": "Freta limus dum"
+        }, 
+        {
+            "location": "/about/#vel-insequitur-et-invisi-manat", 
+            "text": "Lorem markdownum contraxit mare Ditem vulneribus falsa:  ianua cum nuper ? Hoc eheu timendi  deperderet fudit captiva, legebat exsultat ipsaque. Noviens\nmensas?   At auditum iubet quae tum saepe volenti  Et Invidiae frustra doctos inmittor  Natas Psecas petit noviens", 
+            "title": "Vel insequitur et invisi manat"
+        }, 
+        {
+            "location": "/about/#inque-sive-a-truncus-evinctus", 
+            "text": "Hecateia tanto utque  fretumque figura standi Phoebus, pabula fauni inquit\nexstitit Arcade succedere morte aquis idem credite querellas illius? Obfuit\nredimicula ipse diversorum latratibus colli, e in non poenaque. Protinus altera.\nMens erat nec obstantes: contra o nostra omine. Accipis nymphae incerto vocat,\nnavigat tetigere pleno, difficilis tendebant  extremum guttur .  Quem rarissima oculos divino suspiria, potens tamen, dum miserum gurgitis\nsuperbos sedemque nate: esse. Ite toto quoque questuque attulit: et ignota\nneque. Feci  dixerat viscata omnibus  fuisset\nsegnibus corpusque talia. Auxilium toto, Pirenidas esse Teleboasque Denique\nvictor non audiri aequora pectora miratur glaebam volandi aurea falsa terris\nhaec. Pronam factaque viventia donec nec illic Delo transit unum nec secutum\nnutanti esse  tenus  anno patris.", 
+            "title": "Inque sive a truncus evinctus"
+        }, 
+        {
+            "location": "/about/#populari-circumspicit-cupit-dixit-gemino-servat", 
+            "text": "Vincere movet. Volat quoque sumus, sinus nate tota proles: modo occupat.   Vidisset qua fera adulterium facioque  Ferarum iustae Cassiope suo maior creditis mentitus  Visae vultum gratamque fortuna deseruere aures  Eram dieque sibi munere micant  Adparet ingemuit vulgusque tibi Delphis collegit caput", 
+            "title": "Populari circumspicit cupit dixit gemino servat"
+        }, 
+        {
+            "location": "/about/#locuta-lanas-pondere-rediere-senis-retia-descendit", 
+            "text": "Nullos avidaeque Cynthus institerant mihi Oceano quod praemia, ut auras tu\npariter iniuria medio tumulo! Totum nec nitidi patitur suae grata auro Palladias\nobstante ista, suos mater! Militia erit, lactantes ingemuit femina abluit,\ndecursus, ipsa. Magni convertit.  Famulasque signo quos huc sententia libido Procrusten ingenti locuta: ipse\nossaque spectant imaginis  Peleusque constant quaque \nimagine. Sine conde faciebat exhortanturque carpunt fuga auctor iunctarum\nmovetur postera, prior parentis, pendere. Momentaque viribus omnes, nomen  vos. Rosave et fuerat\nhanc, sua Quirites illam communemque licet pectora dicens. Oscula quae coeptus\nsic abit repetisse sepulcrum Cynthus derant.", 
+            "title": "Locuta lanas pondere rediere senis retia descendit"
+        }
+    ]
+}
