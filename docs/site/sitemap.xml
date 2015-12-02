@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/trainCoxMlp/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/simpleNetArch/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/CVLoglikelihood/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/CIndex/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/L2CVSearch/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/L2CVProfile/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/predictNewData/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/varImportance/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/saveModel/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/loadModel/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/example/</loc>
+     <lastmod>2015-12-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>
