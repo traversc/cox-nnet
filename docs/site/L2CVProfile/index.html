@@ -102,9 +102,6 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#l2cvprofile">L2CVProfile</a></li>
-                
-            
             </ul>
         
     </li>
@@ -143,7 +140,7 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../example/">Example</a>
+        <a class="" href="../examples/">Examples</a>
         
     </li>
 <li>
@@ -184,8 +181,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="l2cvprofile">L2CVProfile</h1>
-<p>This is a function for performing cross validation on a list of given (log) values.  </p>
+                <h1>L2CVProfile</h1>
+
+<p>This is a function for performing cross validation on a list of given (log) values.  It returns: cv_likelihoods, a matrix of the cross validated log likelihoods for each fold; L2_reg_params, the log L2 parameters tested and mean_cvpl, the mean log likelihood for each L2 parameter tested.  </p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>x_train</code> - training set matrix.  Expected numpy array.  </li>

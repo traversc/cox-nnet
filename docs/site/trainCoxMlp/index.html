@@ -67,9 +67,6 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#traincoxmlp">trainCoxMlp</a></li>
-                
-            
             </ul>
         
     </li>
@@ -143,7 +140,7 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../example/">Example</a>
+        <a class="" href="../examples/">Examples</a>
         
     </li>
 <li>
@@ -184,8 +181,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="traincoxmlp">trainCoxMlp</h1>
-<p>This function is the main entry point to building a Cox-nnet survival model.  </p>
+                <h1>trainCoxMlp</h1>
+
+<p>This function is the main entry point to building a Cox-nnet survival model.  Returns the Cox-nnet model and the likelihood score.  </p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>x_train</code> - training set matrix.  Expected numpy array.  </li>
@@ -201,8 +199,8 @@
 <li><code>node_map</code> - mapping of neurons in network</li>
 <li><code>input_split</code> - splitting of input layer for customization of the network architecture</li>
 </ul>
-<p>The network architecture is defined by the <code>node_map</code> and <code>input_split</code> parameters.  Setting these values to <em>None</em> will default to a neural network of one hidden layer with the number of neurons in the hidden layer = <em>ceil( sqrt( # of input nodes ))</em>.  <code>input_split</code> is a list of lists with the indices of the inputs determining which sub-input layer each input belongs to.  For example, if you want to split an input with four features into two groups of two: <em>input_split = [[0,1], [2,3]]</em>.  </p>
-<p><code>node_map</code> defines the connections of the input layer (or sub-input layers).  <em>node_map</em> list of list of triples (one list for each hidden layer).  A triple defines the inputs of a sub-hidden layer and how many output nodes it has.  I.e., <em>(# of input neurons, list of input sub-layers, # of output neurons)</em>.  The <code>simpleNetArch</code> function can be used to generate an architecture with a given number of hidden layer neurons.  </p>
+<p>The network architecture is defined by the <code>node_map</code> and <code>input_split</code> parameters.  Setting these values to <em>None</em> will default to a neural network of one hidden layer with the number of neurons in the hidden layer = <em>ceil( sqrt( <h1> of input nodes ))</em>.  <code>input_split</code> is a list of lists with the indices of the inputs determining which sub-input layer each input belongs to.  For example, if you want to split an input with four features into two groups of two: <em>input_split = [[0,1], [2,3]]</em>.  </h1></p>
+<p><code>node_map</code> defines the connections of the input layer (or sub-input layers).  <em>node_map</em> list of list of triples (one list for each hidden layer).  A triple defines the inputs of a sub-hidden layer and how many output nodes it has.  I.e., <em>(<h1> of input neurons, list of input sub-layers, # of output neurons)</em>.  The <code>simpleNetArch</code> function can be used to generate an architecture with a given number of hidden layer neurons.  </h1></p>
 <p><em><code>search params</code></em> is a dictionary of search/optimization hyper-parameters.  Generally the default values will work pretty well and you don't need to change these parameters.  </p>
 <ul>
 <li><code>method</code> - The algorithm for gradient descent.  Includes standard gradient descent ("gradient"), Nesterov accelerated gradient "nesterov" and momentum gradient descent ("momentum").  Default is "nesterov".  </li>
