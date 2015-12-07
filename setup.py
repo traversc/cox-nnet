@@ -2,8 +2,8 @@ from distutils.core import setup
 setup(
   name = 'cox-nnet',
   packages = ['cox_nnet'],
-  version = '0.102',
-  description = 'Extension of neural network architecture for Cox Regression',
+  version = '0.2',
+  description = 'Extension of neural networks for Cox Regression',
   author = 'Travers Ching',
   author_email = 'traversc@gmail.com',
   url = 'https://github.com/traversc/cox-nnet',

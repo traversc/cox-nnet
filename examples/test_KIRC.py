@@ -1,4 +1,4 @@
-import cox_nnet
+from cox_nnet import *
 import numpy
 import sklearn
 
