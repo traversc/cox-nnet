@@ -91,7 +91,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../L2CVSearch/">L2CVSearch</a>
+        <a class="" href="../L2Profile/">L2Profile</a>
         
     </li>
 
@@ -99,6 +99,13 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../L2CVProfile/">L2CVProfile</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../L2CVSearch/">L2CVSearch</a>
         
     </li>
 
@@ -191,6 +198,7 @@
 <li>kidney renal cell carcinoma (KIRC) dataset using RNASeq gene expression data.  Counts were normalized with DESeq2 and then log-ed (log2 + 1).  </li>
 </ul>
 <p>The PBC dataset was obtained from the "survival" package in R and the KIRC dataset was obtained from The Cancer Genome Atlas via the Broad Institute.  Both datasets are standardized (mean = 0 and std. dev = 1) and located in the <em>examples</em> folder.  </p>
+<p>Plots were done in R rather than Python due to better support for plotting survival data.  </p>
 <h2 id="pbc-example">PBC example</h2>
 <p>In this example, the L2 parameter is optimized using the <code>L2CVProfile</code> function, which cross validates the training data.  A model is built using the <code>trainCoxMlp</code> function, and evalulated on the hold out test data.  </p>
 <pre><code class="python">from cox_nnet import *
@@ -235,9 +243,7 @@ theta = model.predictNewData(x_test)
 <p><br></p>
 <h2 id="kirc-example">KIRC example</h2>
 <p>In this example, the L2 parameter is optimized by a validation set: a subset of the training data.  Cross-validation is computationally expensive.  High throughput datasets should be run using multiple cores or the GPU.  See: http://deeplearning.net/software/theano/tutorial/using_gpu.html</p>
-<pre><code class="Python">import sys
-sys.path.insert(0, '/home/tching/mlp_cox/code/cox_nnet_test')
-from cox_nnet_test2 import *
+<pre><code class="Python">from cox_nnet import *
 import numpy
 import sklearn
 
@@ -252,7 +258,8 @@ x_train, x_test, ytime_train, ytime_test, ystatus_train, ystatus_test = \
 
 # split training into optimization and validation sets
 x_opt, x_validation, ytime_opt, ytime_validation, ystatus_opt, ystatus_validation = \
-    sklearn.cross_validation.train_test_split(x_train, ytime_train, ystatus_train, test_size = 0.2, random_state = 1)
+    sklearn.cross_validation.train_test_split(x_train, ytime_train, ystatus_train,
+    test_size = 0.2, random_state = 1)
 
 # set parameters
 model_params = dict(node_map = None, input_split = None)
@@ -267,13 +274,18 @@ likelihoods, L2_reg_params = L2Profile(x_opt,ytime_opt,ystatus_opt,
     model_params, search_params, cv_params, verbose=False)
 
 numpy.savetxt(&quot;KIRC_likelihoods.csv&quot;, likelihoods, delimiter=&quot;,&quot;)
+</code></pre>
 
-#build model based on optimal lambda parameter
+<p><center><img alt="KIRC_cindex.png" src="../img/KIRC_cindex.png" /></center></p>
+<pre><code>#build model based on optimal lambda parameter
 L2_reg = L2_reg_params[numpy.argmax(likelihoods)]
 model_params = dict(node_map = None, input_split = None, L2_reg=numpy.exp(L2_reg))
-model, cost_iter = trainCoxMlp(x_train, ytime_train, ystatus_train, model_params, search_params, verbose=True)
+model, cost_iter = trainCoxMlp(x_train, ytime_train, ystatus_train, 
+    model_params, search_params, verbose=True)
 theta = model.predictNewData(x_test)
 </code></pre>
+
+<p><center><img alt="KIRC_survival_curves.png" src="../img/KIRC_survival_curves.png" /></center></p>
               
             </div>
           </div>

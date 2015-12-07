@@ -44,7 +44,7 @@ plotCoxMLP(pred, time_test, event_test, "PBC_survival_curves.png", "PBC median s
 
 
 read.csv("KIRC_cindex.csv", header=F) -> cvll
-L2 <- seq(-3,2,0.33)
+L2 <- seq(-3,1.67,0.33)
 
 se <- function(x) sd(x)/sqrt(length(x))
 se <- apply(cvll, 1, se)

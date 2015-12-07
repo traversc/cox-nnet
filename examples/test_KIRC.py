@@ -9,7 +9,7 @@ ystatus = numpy.loadtxt(fname="KIRC/ystatus.csv",delimiter=",",skiprows=0)
 
 # split into test/train sets
 x_train, x_test, ytime_train, ytime_test, ystatus_train, ystatus_test = \
-    sklearn.cross_validation.train_test_split(x, ytime, ystatus, test_size = 0.2, random_state = 123)
+    sklearn.cross_validation.train_test_split(x, ytime, ystatus, test_size = 0.2, random_state = 1)
 
 # split training into optimization and validation sets
 x_opt, x_validation, ytime_opt, ytime_validation, ystatus_opt, ystatus_validation = \
@@ -20,7 +20,7 @@ model_params = dict(node_map = None, input_split = None)
 search_params = dict(method = "nesterov", learning_rate=0.01, momentum=0.9, 
     max_iter=4000, stop_threshold=0.995, patience=1000, patience_incr=2, 
     rand_seed = 123, eval_step=23, lr_decay = 0.9, lr_growth = 1.0)
-cv_params = dict(cv_metric = "cindex", L2_range = numpy.arange(-3,2,0.33))
+cv_params = dict(cv_metric = "cindex", L2_range = numpy.arange(-3,1.67,0.33))
 
 #profile log likelihood to determine lambda parameter
 likelihoods, L2_reg_params = L2Profile(x_opt,ytime_opt,ystatus_opt,
