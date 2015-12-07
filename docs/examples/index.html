@@ -242,7 +242,7 @@ theta = model.predictNewData(x_test)
 <center><img alt="PBC_survival_curves.png" src="../img/PBC_survival_curves.png" /></center></p>
 <p><br></p>
 <h2 id="kirc-example">KIRC example</h2>
-<p>In this example, the L2 parameter is optimized by a validation set: a subset of the training data.  Cross-validation is computationally expensive.  High throughput datasets should be run using multiple cores or the GPU.  See: http://deeplearning.net/software/theano/tutorial/using_gpu.html</p>
+<p>In this example, the L2 parameter is optimized by a validation set (a subset of the training data) since cross-validation is computationally expensive.  High throughput datasets should be run using multiple cores or the GPU.  See: http://deeplearning.net/software/theano/tutorial/using_gpu.html</p>
 <pre><code class="Python">from cox_nnet import *
 import numpy
 import sklearn

@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'cox-nnet',
   packages = ['cox_nnet'],
-  version = '0.2',
+  version = '0.201',
   description = 'Extension of neural networks for Cox Regression',
   author = 'Travers Ching',
   author_email = 'traversc@gmail.com',
