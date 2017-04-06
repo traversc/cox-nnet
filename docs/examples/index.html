@@ -152,6 +152,8 @@
             
                 <li class="toctree-l3"><a href="#kirc-example">KIRC example</a></li>
                 
+                    <li><a class="toctree-l4" href="#interfacing-and-analysis-with-r">Interfacing and analysis with R</a></li>
+                
             
             </ul>
         
@@ -283,6 +285,30 @@ model_params = dict(node_map = None, input_split = None, L2_reg=numpy.exp(L2_reg
 model, cost_iter = trainCoxMlp(x_train, ytime_train, ystatus_train, 
     model_params, search_params, verbose=True)
 theta = model.predictNewData(x_test)
+</code></pre>
+
+<h3 id="interfacing-and-analysis-with-r">Interfacing and analysis with R</h3>
+<p>The preferred programming environment for many bioinformaticians is R.  There are two ways to use Cox-nnet from R.  1) Using the rPython R package to interface with Cox-nnet (see http://rpython.r-forge.r-project.org/) or 2) calling Python scripts as a system call and reading the results in from the command line.  The 2nd method is detailed below:</p>
+<pre><code class="R"># Set Theano parameters
+PARAMS = &quot;THEANO_FLAGS=mode=FAST_RUN,device=gpu0,floatX=float32 %s&quot;
+
+# Call python script
+system(sprintf(PARAMS,&quot;examples/test_KIRC.py&quot;))
+
+# Read in the results on the test set
+as.numeric(readLines(&quot;KIRC_theta.csv&quot;)) -&gt; pred
+as.numeric(readLines(&quot;KIRC_ytime_test.csv&quot;)) -&gt; time
+as.numeric(readLines(&quot;KIRC_ystatus_test.csv&quot;)) -&gt; status
+
+# Plot survival curves
+library(survival)
+split_r = as.numeric(pred &gt; median(pred))
+high_curve&lt;-survfit(formula = Surv(time[split_r == 1],status[split_r == 1]) ~ 1)  
+low_curve&lt;-survfit(formula = Surv(time[split_r == 0],status[split_r == 0]) ~ 1) 
+plot(high_curve,main=&quot;&quot;, xlab=&quot;Time to event (days)&quot;, ylab=&quot;Probability&quot;, col= &quot;blue&quot;, conf.int=F, lwd=1, xlim=c(0, max(time)))
+lines(low_curve, col= &quot;green&quot;, lwd=1, lty=1, conf.int=F)
+legend(&quot;topright&quot;, legend=c(&quot;High PI&quot;, &quot;Low PI&quot;), fill=c(&quot;blue&quot;,&quot;green&quot;))
+
 </code></pre>
 
 <p><center><img alt="KIRC_survival_curves.png" src="../img/KIRC_survival_curves.png" /></center></p>
