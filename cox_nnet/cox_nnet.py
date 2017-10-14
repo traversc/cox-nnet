@@ -72,7 +72,8 @@ class CoxRegression(object):
 #This hidden layer class code is adapted from the multilayer perceptron HL class on deeplearning.net
 class HiddenLayer(object):
     def __init__(self, rng, input, n_samples, map, label, activation=T.tanh):
-
+        print map
+        
         W = [0] * len(map)
         b = [0] * len(map)
         input = numpy.asarray(input)
@@ -82,7 +83,7 @@ class HiddenLayer(object):
                 rng.uniform(
                     low=-numpy.sqrt(6. / (map[i][0] + map[i][2])),
                     high=numpy.sqrt(6. / (map[i][0] + map[i][2])),
-                    size=(map[i][0], map[i][2])
+                    size=(int(map[i][0]), int(map[i][2]))
                 ),
                 dtype=theano.config.floatX
             )
@@ -135,7 +136,7 @@ class CoxMlp(object):
                 self.input[i] = createSharedDataset(x_train[:,input_split[i]])
         
         if node_map == None:
-            self.node_map = [[(x_train.shape[1],[0],numpy.ceil(x_train.shape[1] ** 0.5))]]
+            self.node_map = [[(x_train.shape[1],[0],int(numpy.ceil(x_train.shape[1] ** 0.5)))]]
         else:
             self.node_map = node_map
             

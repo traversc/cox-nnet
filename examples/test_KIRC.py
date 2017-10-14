@@ -1,3 +1,6 @@
+import sys
+sys.path.append("/home/travers/WindowsDesktop/cox-nnet/cox_nnet")
+
 from cox_nnet import *
 import numpy
 import sklearn
