@@ -72,8 +72,6 @@ class CoxRegression(object):
 #This hidden layer class code is adapted from the multilayer perceptron HL class on deeplearning.net
 class HiddenLayer(object):
     def __init__(self, rng, input, n_samples, map, label, activation=T.tanh):
-        print map
-        
         W = [0] * len(map)
         b = [0] * len(map)
         input = numpy.asarray(input)
